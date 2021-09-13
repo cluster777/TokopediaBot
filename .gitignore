@@ -1,2 +1,4 @@
 *.pdf
 *.png
+*EXAMPLE.py
+setting.json
