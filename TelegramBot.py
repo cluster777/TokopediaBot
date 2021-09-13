@@ -13,7 +13,10 @@ API_TOKEN = setting['Token']
 print(API_TOKEN)
 
 bot = telebot.TeleBot(API_TOKEN)
+
+# if want to send direct message use this python
 # bot.send_message(setting["ChatId"], "testing direct Message hooray")
+
 @bot.message_handler(commands=['help', 'start','Start'])
 def Send_Welcome(message):
     print(message)
