@@ -15,15 +15,14 @@ print(API_TOKEN)
 bot = telebot.TeleBot(API_TOKEN)
 
 # if want to send direct message use this python
-# bot.send_message(setting["ChatId"], "testing direct Message hooray")
+# k = types.InlineKeyboardMarkup()
+# k.add(types.InlineKeyboardButton("reply", callback_data="reply"))
+# bot.send_message(setting["ChatId"], "the content........ ok insert meme here", reply_markup=k))
 
 @bot.message_handler(commands=['help', 'start','Start'])
 def Send_Welcome(message):
     print(message.chat.id)
-    k = types.InlineKeyboardMarkup()
-
-    k.add(types.InlineKeyboardButton("reply", callback_data="reply"))
-    bot.reply_to(message, "this is hello message", reply_markup=k)
+    bot.reply_to(message, "this is hello message")
 
 @bot.callback_query_handler(func=lambda query: query.data=="reply")
 def anotherSendMessage(query):
