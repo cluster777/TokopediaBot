@@ -21,4 +21,4 @@ def sendChat(message):
     # if want to send direct message use this python
     k = types.InlineKeyboardMarkup()
     k.add(types.InlineKeyboardButton("reply", callback_data="reply"))
-    bot.send_message(setting["ChatId"], "the content........ ok insert meme here", reply_markup=k)
+    bot.send_message(setting["ChatId"], message, reply_markup=k)
