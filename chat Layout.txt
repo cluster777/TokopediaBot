@@ -1,0 +1,86 @@
+### 
+the big container
+###
+
+## 
+chat container
+##
+<div class="css-1r71t1x">
+
+## 
+user list container
+##
+<div class="css-pevnb4">
+
+### 
+user list chat item
+###
+<div class="css-1l9fnan" aria-label="ChatListItem">
+	<div class="listTextName">
+		<h3 class="">CSR Taman</h3>
+		<div data-unify="Label" class="css-mh4tan-unf-label e143v2d00">Penjual</div>
+	</div>
+	<div class="wrapperText">
+		<div class="listTextChat">🥳 , ada produk baru, nih. Cek toko kami sekaran</div>
+	</div>
+</div>
+
+###
+chatting box item
+###
+
+##
+from npc
+##
+<div class="css-sbgjvz inbox">
+	<div class="messageWrapper">
+		<div class="messageContent" data-testid="txtChatMessage">…</div>
+		(optional)<div class="messageFooter">Pesan ini dibalas oleh sistem</div>
+		<div class="messageTimeStatus noMargin">…</div>
+	</div>
+</div>
+
+##
+from player
+##
+<div class="css-sbgjvz inbox sender">
+	<div class="messageWrapper">
+		<div class="messageContent inline" data-testid="txtChatMessage">kalau pisang nya punya kak.</div>
+		<div class="messageTimeStatus">…</div>
+	</div>
+</div>
+
+##
+sticker wrapper npc
+check the alt or title
+##
+<div class="css-11bbb7a">
+	<div class="stickerThumbnailWrapper">
+		<img class="stickerThumbnail" src="https://ecs7.tokopedia.net/img/chat/sticker/buyer_3.png" title="Mohon diproses ya" alt="Mohon diproses ya">
+##
+sticker wrapper player
+check the alt or title
+##
+<div class="css-11bbb7a sender">
+	<div class="stickerThumbnailWrapper">
+		<img class="stickerThumbnail" src="https://ecs7.tokopedia.net/img/chat/sticker/seller_8.png" title="Siaaap!" alt="Siaaap!">
+
+###
+misc
+###
+
+##
+alert thumbnail????
+##
+<span class="css-21ghh0">1</span>
+
+###
+text box to type chat
+###
+<textarea class="css-1ovsmxh" rows="1" placeholder="Tulis pesan..." data-testid="iptChatTextarea"></textarea>
+
+###
+send button
+###
+<button type="button" class="css-r8gksp" data-testid="btnChatSend">…</button>
+	
