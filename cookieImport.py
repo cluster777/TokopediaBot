@@ -14,7 +14,7 @@ user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Ge
 chrome_options.add_argument('user-agent={0}'.format(user_agent))
 chrome_options.add_argument('window-size=1920x1080');
 driver = webdriver.Chrome(options=chrome_options)
-with open('cookieTestpp.txt','r', newline='')as tmp:
+with open('cookieTestmm.txt','r', newline='')as tmp:
     cookies = json.load(tmp)
 driver.get("https://www.tokopedia.com/")
 for curcookie in cookies:

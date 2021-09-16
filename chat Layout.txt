@@ -1,3 +1,22 @@
+###
+dashboard notification
+###
+##
+before expansion no action needed
+## 
+<div class="css-1go1zqz" style="">
+	<i class="css-14tknib"></i>
+	<span data-testid="totalInboxHeader" class="css-18nsvdk">1</span>
+</div>
+##
+after expansion click on message button
+##
+<a href="/chat" class="css-3fxfax" data-testid="lnkInboxMenuChat">
+	Chat
+	<span class="css-gd33vt">1</span>
+</a>
+
+
 ### 
 the big container
 ###
@@ -15,15 +34,75 @@ user list container
 ### 
 user list chat item
 ###
+##
+inactive
+##
 <div class="css-1l9fnan" aria-label="ChatListItem">
-	<div class="listTextName">
-		<h3 class="">CSR Taman</h3>
-		<div data-unify="Label" class="css-mh4tan-unf-label e143v2d00">Penjual</div>
+	<div class="css-qqg5l0"></div>
+	<div class="listItemWrapper">
+		<div class="css-1y0hdjs">
+		<img src="https://imagerouter.tokopedia.com/image/v1/s/7524178/shop_xs_thumbnail/desktop" alt="Kings Softlens"></div>
+		<div class="css-1yssxig">
+			<div class="listTextName">
+			<h3 class="">Kings Softlens</h3>
+			<div data-unify="Label" class="css-mh4tan-unf-label e143v2d00">Penjual</div>
+			</div><div class="wrapperText">
+			<div class="listTextChat">exp 2023 keatas kak</div>
+		</div>
 	</div>
-	<div class="wrapperText">
-		<div class="listTextChat">🥳 , ada produk baru, nih. Cek toko kami sekaran</div>
+	<div class="css-up9rb4">
+		<div class="listTime">30 Jul</div>
+		<div class="listInfoBottom">
+		<div class="listOption">
+		<div class="css-o0fxl2" aria-label="ChatListMenu"></div>
+		<div class="css-1g5bam4">
+			<ul>
+				<li>Tempel Chat</li>
+				<li>Atur Penerimaan Chat</li>
+				<li>Tandai Belum Dibaca</li>
+				<li>Hapus</li>
+			</ul>
+		</div>
 	</div>
 </div>
+</div></div></div>
+
+##
+active
+##
+<div class="css-1l9fnan" aria-label="ChatListItem">
+	<div class="css-qqg5l0"></div>
+		<div class="listItemWrapper">
+			<div class="css-1y0hdjs">
+				<img src="https://imagerouter.tokopedia.com/image/v1/s/101947/shop_xs_thumbnail/desktop" alt="paffie shop"></div>
+				<div class="css-1yssxig"><div class="listTextName">
+				<h3 class="unreads">paffie shop</h3>
+				<div data-unify="Label" class="css-mh4tan-unf-label e143v2d00">Penjual</div>
+			</div>
+			<div class="wrapperText">
+			<div class="listTextChat">Terima kasih telah menghubungi kami, mohon maaf saat ini kami sedang tutup. Pesan kamu akan segera kami balas saat jam operasional ya. Order bisa dilakukan 24 jam. Silakan order barang yg di etalase semuanya ready stock ya</div>
+		</div>
+	</div>
+	<div class="css-up9rb4">
+		<div class="listTime">18:02</div>
+ON HOVER	<div class="listInfoBottom"> 
+			<span class="css-8108bx">1</span>
+			<div class="listOption">
+				<div class="css-o0fxl2" aria-label="ChatListMenu"></div>
+				<div class="css-1g5bam4">
+					<ul>
+						<li>Tempel Chat</li>
+						<li>Atur Penerimaan Chat</li>
+						<li>Tandai Sudah Dibaca</li>
+						<li>Hapus</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div></div>
+
+
 
 ###
 chatting box item
