@@ -6,10 +6,8 @@ from telebot import types
 import json
 def get_nChat(target,n):
     soup=bs(target,'html.parser')
-    chatBoxAll = soup.find('div', {'class': 'css-1r71t1x'})
-    chatHeader = chatBoxAll.findChildren("div" , recursive=False)
-    chatAll=chatHeader[2]
-    chatAll=chatAll.findChildren("div" , recursive=False)
+    chatBoxAll = soup.find('div', {'class': 'css-19idom'})
+    chatAll = chatBoxAll.findChildren("div" , recursive=False)
     return chatAll[-n:]
 
 def get_Chatcount(target):
@@ -19,7 +17,7 @@ def get_Chatcount(target):
     for chat in chatBoxAll:
         try:
             # get the name and the chat count
-            res.append({chat.find('h3').getText(),chat.find('span').getText()})
+            res.append({'name':chat.find('h3').getText(),'count':chat.find('span').getText()})
         except:
             continue;
     return res

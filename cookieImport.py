@@ -7,6 +7,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 import json
 import time
+import scrapper
+import chatbot
 
 chrome_options = Options()
 # chrome_options.add_argument("--headless")
@@ -34,11 +36,58 @@ a.move_to_element(m).perform()
 WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//a[@href='/chat']"))).text
 driver.find_element_by_xpath("//a[@href='/chat']").click()
 time.sleep(5)
-try:
-    driver.find_element_by_xpath("//button[@aria-label='Tutup tampilan modal']").click()
-except:
-    print("nothing wrong")
 driver.save_screenshot("screenshot.png")
+while True:
+    # remove pin verification notification
+    try:
+        try:
+            driver.find_element_by_xpath("//button[@aria-label='Tutup tampilan modal']").click()
+        except:
+            print("nothing wrong")
+        #the check chat loop
+        #check for indicator and get all which have it
+        found=scrapper.get_Chatcount(driver.page_source)
+        found.append({'name': 'paffie shop', 'count': '1'})
+        if (found==[]):
+            print("no chat found")
+            time.sleep(60)
+            driver.refresh()
+            continue;
+        #for each chat with indicator do
+        
+        for find in found:
+            print(find)
+            time.sleep(1)
+            chatSelector=driver.find_element_by_xpath("//*[text()='{name}']".format(name=find['name'])).click()
+            #now chat should be open get the content
+
+            message=scrapper.get_nChat(driver.page_source,int(find['count']))
+            #get the chatbot result for each message
+            result=chatbot.getReply(message)
+
+            for chat in result:
+                print('-----------')
+                print(chat)
+                if chat['reply']=='':
+                    # send to telegram notification channel for user input
+                    scrapper.sendChat(chat['content'])
+                else:
+                    #send the message itself
+                    textArea=driver.find_element_by_tag_name('textarea')
+                    textArea.clear()
+                    textArea.send_keys(chat['reply'])
+                    time.sleep(1)
+                    driver.find_element_by_xpath("//button[@data-testid='btnChatSend']").click()
+                    time.sleep(1)
+        # ok done wait for next round
+        print("round done wait for next")
+        time.sleep(30)
+        driver.refresh()
+    except Exception as e:
+        print("uh error????")
+        print(e)
+        print("---------^^^^")
+
 #while check 
 #if there is indicator do reply
 #sleep n time
