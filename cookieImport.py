@@ -11,7 +11,7 @@ import scrapper
 import chatbot
 
 chrome_options = Options()
-# chrome_options.add_argument("--headless")
+chrome_options.add_argument("--headless")
 user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'    
 chrome_options.add_argument('user-agent={0}'.format(user_agent))
 chrome_options.add_argument('window-size=1920x1080');
@@ -47,7 +47,6 @@ while True:
         #the check chat loop
         #check for indicator and get all which have it
         found=scrapper.get_Chatcount(driver.page_source)
-        found.append({'name': 'paffie shop', 'count': '1'})
         if (found==[]):
             print("no chat found")
             time.sleep(60)
@@ -58,10 +57,11 @@ while True:
         for find in found:
             print(find)
             time.sleep(1)
-            chatSelector=driver.find_element_by_xpath("//*[text()='{name}']".format(name=find['name'])).click()
+            driver.find_element_by_xpath("//*[text()='{name}']".format(name=find['name'])).click()
             #now chat should be open get the content
-
+            time.sleep(5)
             message=scrapper.get_nChat(driver.page_source,int(find['count']))
+            print(message)
             #get the chatbot result for each message
             result=chatbot.getReply(message)
 
@@ -70,7 +70,11 @@ while True:
                 print(chat)
                 if chat['reply']=='':
                     # send to telegram notification channel for user input
-                    scrapper.sendChat(chat['content'])
+                    print("i send a message to telegram")
+                    mess='''from {name} 
+                    
+                    {content}'''.format(name=find['name'],content=chat['content'])
+                    scrapper.sendChat(mess)
                 else:
                     #send the message itself
                     textArea=driver.find_element_by_tag_name('textarea')
@@ -83,10 +87,14 @@ while True:
         print("round done wait for next")
         time.sleep(30)
         driver.refresh()
+        time.sleep(5)
     except Exception as e:
         print("uh error????")
         print(e)
         print("---------^^^^")
+        time.sleep(30)
+        driver.refresh()
+        time.sleep(5)
 
 #while check 
 #if there is indicator do reply

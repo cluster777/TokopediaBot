@@ -33,9 +33,3 @@ def sendChat(message):
     k = types.InlineKeyboardMarkup()
     k.add(types.InlineKeyboardButton("reply", callback_data="reply"))
     bot.send_message(setting["ChatId"], message, reply_markup=k)
-
-with open('../tokopedia bot html/Chat Tokopedia + 1 chat .html') as f:
-    res=get_Chatcount(f.read())
-    for r in res:
-        print('------')
-        print(r)
