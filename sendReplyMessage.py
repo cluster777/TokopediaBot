@@ -77,7 +77,7 @@ def sendReplyMessage(name,message):
             time.sleep(1)
             driver.refresh()
             time.sleep(5)
-
+        driver.close()
     #while check 
     #if there is indicator do reply
     #sleep n time

@@ -71,7 +71,7 @@ while True:
                 if chat['reply']=='':
                     # send to telegram notification channel for user input
                     print("i send a message to telegram")
-                    mess='''from {name} 
+                    mess='''from ||{name}|| 
                     
                     {content}'''.format(name=find['name'],content=chat['content'])
                     scrapper.sendChat(mess)

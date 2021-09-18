@@ -25,14 +25,20 @@ def Send_Welcome(message):
 
 @bot.callback_query_handler(func=lambda query: query.data=="reply")
 def anotherSendMessage(query):
-    print(query)
-    msg = {'message':query.message,'value':bot.send_message(query.message.chat.id,"please type message reply this {text} {data}".format(text=query.message.text, data=query.data))}
+
+    global mess
+    mess=query.message.text
+    msg = bot.send_message(query.message.chat.id,"please type message reply this {text} {data}".format(text=query.message.text, data=query.data))
     bot.register_next_step_handler(msg, fillReply)
 
 def fillReply(message):
-    value=message['value']
-    source=message['message'].text
-    source=re.search('^from (.*)',source).group(1)
+    value=message.text
+    source=mess
+    print("**************")
+    print(value)
+    print("**************")
+    print(source)
+    source=re.search('from \|\|(.*)\|\|',source).group(1)
     sendReplyMessage.sendReplyMessage(source,value)
     bot.send_message(message.chat.id,"we reply to {source} with {value}".format(source=source,value=value))
 
