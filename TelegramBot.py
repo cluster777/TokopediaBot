@@ -33,7 +33,7 @@ except:
 @bot.message_handler(commands=['help', 'start','Start'])
 def Send_Welcome(message):
     print(message.chat.id)
-    bot.reply_to(message, "Hello this is the Tokopedia chatbot we are talking with you in chatId {Id} \nyou can auto create a new config file by using /config \n or you can check all the pre-requisite to do by using /check".format(Id=message.chat.id))
+    bot.reply_to(message, "Hello this is the Tokopedia chatbot we are talking with you in chatId {Id} \nyou can check all the pre-requisite to do by using /check".format(Id=message.chat.id))
 
 @bot.message_handler(commands=['config', 'Config'])
 def create_setting(message):
