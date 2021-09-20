@@ -1,17 +1,29 @@
 from requests import get
-
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 import telebot
 from telebot import types
 import re
 import json
+import os
 import sendReplyMessage
 setting={}
-with open('./setting.json')as f:
-    setting=json.load(f)
-API_TOKEN = setting['Token']
+try:
+    with open('./setting.json')as f:
+        setting=json.load(f)
+except:
+    print("file not setting.json not available in this folder please make one dont forget the token")
+
+try:
+    API_TOKEN = setting['Token']
+except:
+    print("Token not yet available please check example for this")
 print(API_TOKEN)
 
-bot = telebot.TeleBot(API_TOKEN)
+try:
+    bot = telebot.TeleBot(API_TOKEN)
+except:
+    print("you got the wrong token please find one with the botfather")
 
 # if want to send direct message use this python
 # k = types.InlineKeyboardMarkup()
@@ -21,7 +33,42 @@ bot = telebot.TeleBot(API_TOKEN)
 @bot.message_handler(commands=['help', 'start','Start'])
 def Send_Welcome(message):
     print(message.chat.id)
-    bot.reply_to(message, "this is hello message")
+    bot.reply_to(message, "Hello this is the Tokopedia chatbot we are talking with you in chatId {Id} \nyou can auto create a new config file by using /config \n or you can check all the pre-requisite to do by using /check".format(Id=message.chat.id))
+
+@bot.message_handler(commands=['config', 'Config'])
+def create_setting(message):
+    setting["ChatId"]=message.chat.id
+    with open("./setting.json","w") as f:
+        json.dump(setting, f, indent = 6)
+    bot.send_message(message.chat.id,"setting done")
+
+    
+@bot.message_handler(commands=['Check', 'check'])
+def check_Status(message):
+    m=""
+    if "ChatId" in setting:
+        if setting["ChatId"]!=message.chat.id:
+            m+="setting not OK use command /config to fix\n"
+        else:
+            m+="setting OK\n"
+    else:
+        m+="setting not OK use command /config to fix\n"
+    if os.path.isfile('./cookieTestmm.txt'):
+        m+="cookie ready to use OK\n"
+    else:
+        m+="cookie not ready use \"cookie dump.py\" to make one"
+    try:
+        chrome_options = Options()
+        chrome_options.add_argument("--headless")
+        user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'    
+        chrome_options.add_argument('user-agent={0}'.format(user_agent))
+        chrome_options.add_argument('window-size=1920x1080');
+        driver = webdriver.Chrome(options=chrome_options)
+        driver.close()
+        m+="Web driver OK\n"
+    except:
+        m+="Web driver not ready\n first download the webdriver from https://chromedriver.chromium.org/downloads \n then insert it into path named chromedriver"
+    bot.send_message(message.chat.id,m)
 
 @bot.callback_query_handler(func=lambda query: query.data=="reply")
 def anotherSendMessage(query):
