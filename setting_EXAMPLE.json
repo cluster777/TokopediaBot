@@ -1,5 +1,6 @@
 {
     "BotName":"Your bot name",
     "botUri":"your URI",
-    "Token":"yourBotAPITOKEN make it yourself with botfather"
+    "Token":"yourBotAPITOKEN make it yourself with botfather",
+    "ChatId":""
 }
