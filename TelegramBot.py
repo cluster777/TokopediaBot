@@ -37,10 +37,13 @@ def Send_Welcome(message):
 
 @bot.message_handler(commands=['config', 'Config'])
 def create_setting(message):
-    setting["ChatId"]=message.chat.id
-    with open("./setting.json","w") as f:
-        json.dump(setting, f, indent = 6)
-    bot.send_message(message.chat.id,"setting done")
+    if setting["ChatId"]=="":
+        setting["ChatId"]=message.chat.id
+        with open("./setting.json","w") as f:
+            json.dump(setting, f, indent = 6)
+        bot.send_message(message.chat.id,"setting done")
+    else:
+        bot.send_message(message.chat.id,"there already another chat bound change it into empty string chatid:\"\" ")
 
     
 @bot.message_handler(commands=['Check', 'check'])
