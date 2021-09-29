@@ -1,0 +1,21 @@
+{
+    "intents":[
+        {
+            "tag":"toko buka",
+            "patterns":["apakah barang masih ada"],
+            "responses":["toko masih buka apakah yang bisa saya bantu"],
+            "context":[""]
+        },
+        {
+            "tag":"terimakasih",
+            "patterns":["terimakasih", "xiexie", "xie xie"],
+            "responses":["sama sama","tidak masalah"],
+            "context":[""]
+        },{
+            "tag":"tidak menjawab",
+            "patterns":[],
+            "responses":[""],
+            "context":[""]
+        }
+    ]
+}
