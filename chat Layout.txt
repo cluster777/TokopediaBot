@@ -136,6 +136,8 @@ check the alt or title
 <div class="css-11bbb7a">
 	<div class="stickerThumbnailWrapper">
 		<img class="stickerThumbnail" src="https://ecs7.tokopedia.net/img/chat/sticker/buyer_3.png" title="Mohon diproses ya" alt="Mohon diproses ya">
+		</div>
+		</div>
 ##
 sticker wrapper player
 check the alt or title

@@ -8,7 +8,18 @@ def get_nChat(target,n):
     soup=bs(target,'html.parser')
     chatBoxAll = soup.find('div', {'class': 'css-19idom'})
     chatAll = chatBoxAll.findChildren("div" , recursive=False)
-    return chatAll[-n:]
+    return message_preProcess(chatAll[-n:])
+
+def message_preProcess(message):
+    res=[]
+    for mess in message:
+        mess=mess.findChildren('div')
+        if(mess[0]['class'][0]=='messageWrapper'):
+            res.append(mess[0].findChildren('div')[0].getText())
+        else:
+            image=mess[0].find('img')
+            res.append(image['src'])
+    return res
 
 def get_Chatcount(target):
     soup=bs(target,'html.parser')
