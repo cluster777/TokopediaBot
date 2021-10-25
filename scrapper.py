@@ -9,13 +9,25 @@ def get_nChat(target,n):
     chatBoxAll = soup.find('div', {'class': 'css-19idom'})
     chatAll = chatBoxAll.findChildren("div" , recursive=False)
     return message_preProcess(chatAll[-n:])
-    
+
 def get_allchat(target):
     soup=bs(target,'html.parser')
     chatBoxAll = soup.find('div', {'class': 'css-19idom'})
     chatAll = chatBoxAll.findChildren("div" , recursive=False)
     return message_preProcess(chatAll)
 
+def get_allChatname(target):
+    soup=bs(target,'html.parser')
+    chatBoxAll = soup.find_all('div', {'aria-label': 'ChatListItem'})
+    res=[]
+    for chat in chatBoxAll:
+        try:
+            # get the name and the chat count
+            res.append({'name':chat.find('h3').getText()})
+        except:
+            continue;
+    return res
+    
 def message_preProcess(message):
     res=[]
     for mess in message:
