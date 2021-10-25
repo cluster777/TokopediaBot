@@ -11,7 +11,7 @@ install pip
 
 install telebot, beautiful soup, selenium
 ``` 
-pip install pyTelegramBotAPI bs4 selenium
+pip install pyTelegramBotAPI bs4 selenium webdriver-manager
 ```
 
 download chromedriver from https://chromedriver.chromium.org/downloads
