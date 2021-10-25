@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.keys import Keys
