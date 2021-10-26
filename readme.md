@@ -82,10 +82,16 @@ open Tokopedia page -> load cookie -> go to chat -> open the chat(using name par
 ### order.py ###
 new program to scrap from tokopedia seller page it will send message to telegram if there is new order in the page
 
+
+### dumpAllChat ###
+a program to dump all chat from sender to json file
+will only dump message that is string or image or sticker
+note may dump unicode
+this program used for dataset in this project 
+
 ### chatbot.py ###
 (WIP)
 for now it return empty reply mesage whatever it input is......
 
 have fun 
-
 -- made by cluster777 --
