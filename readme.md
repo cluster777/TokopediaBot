@@ -13,9 +13,8 @@ install telebot, beautiful soup, selenium
 ``` 
 pip install pyTelegramBotAPI bs4 selenium webdriver-manager
 ```
-
-download chromedriver from https://chromedriver.chromium.org/downloads
-> dont forget **add it to path** named "chromedriver"
+### chromedriver ###
+chromedriver no longer required to run the program updated to auto download the requirement and store it in cache
 
 next run "cookie dump.py" and then do login to tokopedia website
 > note the cookie only copied into local folder
@@ -28,7 +27,7 @@ next run TelegramBot.py
 fill chatId with your userID it will direct message there
 > chatId use your userId (after running telegram bot it will print on terminal after you click start on the bot chat)
 
-now run cookieImport.py it will automatically send information to your telegram 
+now run cookieImport.py and order.py it will automatically send information to your telegram 
 ## file explanation ##
 here i will explain how each file works
 ### cookie dump.py ###
@@ -79,6 +78,9 @@ in send chat its required to have the setting.json configured since it will take
 read cookieImport for detail
 this program works like cookieImport except without loop
 open Tokopedia page -> load cookie -> go to chat -> open the chat(using name parameter) -> fill in text area(using message parameter) -> click send -> close itself
+
+### order.py ###
+new program to scrap from tokopedia seller page it will send message to telegram if there is new order in the page
 
 ### chatbot.py ###
 (WIP)
