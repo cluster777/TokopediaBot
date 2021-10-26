@@ -37,30 +37,31 @@ a.move_to_element(m).perform()
 WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//a[@href='/chat']"))).text
 driver.find_element_by_xpath("//a[@href='/chat']").click()
 time.sleep(5)
-while True:
+
     # remove pin verification notification
-    try:
-        driver.find_element_by_xpath("//button[@aria-label='Tutup tampilan modal']").click()
-    except:
-        print("nothing wrong")
-    #the check chat loop
-    #check for indicator and get all which have it
-    found=scrapper.get_allChatname(driver.page_source)
-    #for each chat with indicator do
-    res=[]  
-    for find in found:
+try:
+    driver.find_element_by_xpath("//button[@aria-label='Tutup tampilan modal']").click()
+except:
+    print("nothing wrong")
+#the check chat loop
+#check for indicator and get all which have it
+found=scrapper.get_allChatname(driver.page_source)
+#for each chat with indicator do
+res=[]  
+for find in found:
 
-        print(find)
-        time.sleep(2)
-        driver.find_element_by_xpath("//*[text()='{name}']".format(name=find['name'])).click()
-        #now chat should be open get the content
-        time.sleep(7)
-        message=scrapper.get_allchat(driver.page_source)
-        message_set=set(message)
-        res_set=set(res)
-        difference=message_set-res_set
-        res=res+list(difference)
-
+    print(find)
+    time.sleep(2)
+    driver.find_element_by_xpath("//*[text()='{name}']".format(name=find['name'])).click()
+    #now chat should be open get the content
+    time.sleep(7)
+    message=scrapper.get_allchat(driver.page_source)
+    message_set=set(message)
+    res_set=set(res)
+    difference=message_set-res_set
+    res=res+list(difference)
+with open("./dumpChat.json", "w") as f:
+    json.dump(res, f, indent = 6)
 #while check 
 #if there is indicator do reply
 #sleep n time
