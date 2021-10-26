@@ -50,7 +50,11 @@ def get_Chatcount(target):
         except:
             continue;
     return res
-    
+
+def get_orderCount(target):
+    soup=bs(target,"html.parser")
+    cards=soup.find('div',{'id':"coachmark-id-card"})
+    return int(cards.find('h2').getText())
 
 def sendChat(message):
     setting={}
@@ -62,3 +66,12 @@ def sendChat(message):
     k = types.InlineKeyboardMarkup()
     k.add(types.InlineKeyboardButton("reply", callback_data="reply"))
     bot.send_message(setting["ChatId"], message, reply_markup=k)
+
+def sendOrderNotification(message):
+    setting={}
+    with open('./setting.json')as f:
+        setting=json.load(f)
+    API_TOKEN = setting['Token']
+    bot = telebot.TeleBot(API_TOKEN)
+    # if want to send direct message use this python
+    bot.send_message(setting["ChatId"], "there is {count} paid order in Tokopedia please handle them".format(count=message))
