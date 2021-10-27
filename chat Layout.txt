@@ -1,4 +1,31 @@
 ###
+dashboard seller
+###
+<div data-testid="btnHeaderMyshop" id="my-shop-container" class="css-1jwu6w6 e1jpyo0s2">
+	<div class="css-lipffl" style="">
+	<img class="css-uoksw0" data-testid="shopAvatarHdr" src="https://images.tokopedia.net/img/cache/215-square/shops-1/2018/7/26/544569/544569_4ce0c69a-04a9-466a-a688-c68207fb0467.jpg" alt="tertipu">
+	<div class="css-67arje">tertipu</div>
+	</div>
+</div>
+###
+seller button
+###
+<a class="css-c4wlm6" href="https://seller.tokopedia.com/home" target="_blank" rel="noopener noreferrer">Cek Tokopedia Seller</a>
+###
+seller page with the number of order
+###
+
+<a data-unify="Link" href="/myshop_order?status=new_order" target="_blank" class="css-1g8zdv8-unf-link en8iawh0" font-size="12">
+	<div class="css-kad4de">
+		<div class="css-10kldfv title">
+			<p data-testid="txtSellerDashboardcardnewOrderTitle" class="title title css-17no6sn light">Pesanan baru</p>
+			<div class="css-ypd15i-unf-tooltip" data-unify="Tooltip" data-testid="tipSellerDashboardcardnewOrder" style="display: flex;">
+			<img src="https://assets.tokopedia.net/assets-tokopedia-lite/v2/icarus/kratos/32ab2f3a.svg" alt="" class="loading" data-was-processed="true">
+	<div class="css-188pfgk e1hrfe840">Jumlah pesanan yang baru masuk dan sudah dibayar oleh pembeli.</div></div></div><div class="css-10kldfv subtitle">
+	</div>
+</div>
+<h2 data-unify="Typography" data-testid="txtSellerDashboardcardnewOrderValue" class="css-zvi1nn-unf-heading-unf-heading e1qvo2ff2"><div class="css-wbl3by">0</div></h2><div data-testid="txtSellerDashboardcardnewOrderComparison" class="css-18xq134"></div></a></div></section></div></div>
+###
 dashboard notification
 ###
 ##
@@ -136,6 +163,8 @@ check the alt or title
 <div class="css-11bbb7a">
 	<div class="stickerThumbnailWrapper">
 		<img class="stickerThumbnail" src="https://ecs7.tokopedia.net/img/chat/sticker/buyer_3.png" title="Mohon diproses ya" alt="Mohon diproses ya">
+		</div>
+		</div>
 ##
 sticker wrapper player
 check the alt or title
