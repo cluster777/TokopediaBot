@@ -31,11 +31,7 @@ try:
 except:
     print("nothing wrong")
 
-a = ActionChains(driver)
-m= driver.find_element_by_xpath("//div[@data-testid='btnHeaderInbox']")
-a.move_to_element(m).perform()
-WebDriverWait(driver,10).until(EC.element_to_be_clickable((By.XPATH,"//a[@href='/chat']"))).text
-driver.find_element_by_xpath("//a[@href='/chat']").click()
+driver.get("https://seller.tokopedia.com/chat") 
 time.sleep(5)
 driver.save_screenshot("screenshot.png")
 while True:
