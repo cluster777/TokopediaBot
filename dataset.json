@@ -2,14 +2,54 @@
     "intents":[
         {
             "tag":"toko buka",
-            "patterns":["apakah barang masih ada"],
+            "patterns":["apakah toko buka?",
+                "apakah masih buka?"],
             "responses":["toko masih buka apakah yang bisa saya bantu"],
             "context":[""]
         },
         {
             "tag":"terimakasih",
-            "patterns":["terimakasih", "xiexie", "xie xie"],
+            "patterns":["Terima kasih",
+                "siap Terima kasih",
+                "Terimakasih",
+                "Terima kasih gan",
+                "Terima kasih min",
+                "Terimakasih gan",
+                "Terimakasih min"],
             "responses":["sama sama","tidak masalah"],
+            "context":[""]
+        },{
+            "tag":"menawar",
+            "patterns":["bs kurang nggak gan?",
+                "bisa kurang nggak min?",
+                "bisa kurang nggak kak?",
+                "bisa kurang nggak?"],
+            "responses":[""],
+            "context":[""]
+        },{
+            "tag":"tanya pengiriman",
+            "patterns":["utk pemgiriman via [] bgmn cara ordernya gan?",
+                "utk pemgiriman via [] bgmn gan?",
+                "utk pemgiriman via [] bgmn kak?"],
+            "responses":[""],
+            "context":[""]
+        },{
+            "tag":"baru atau 2nd",
+            "patterns":["ini baru atau bekas ya gan?",
+                "ini baru atau bekas ya?"],
+            "responses":[""],
+            "context":[""]
+        },{
+            "tag":"barang ready",
+            "patterns":["apakah barang siap?",
+                "Barangnya ready gan?",
+                "Barangnya ready?",
+                "barang ready stok?",
+                "barang ready stok min?",
+                "yg [] abis min?",
+                "ada [] gan ?",
+                "Kak mw tanya barang [] nya ada?"],
+            "responses":[""],
             "context":[""]
         },{
             "tag":"tidak menjawab",
