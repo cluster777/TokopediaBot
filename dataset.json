@@ -3,7 +3,12 @@
         {
             "tag":"toko buka",
             "patterns":["apakah toko buka?",
-                "apakah masih buka?"],
+                "apakah masih buka?",
+                "apa toko buka?",
+                "apakah masih ada?",
+                "apakah toko tutup?",
+                "apakah sudah tutup?",
+                "kapan buka?"],
             "responses":["toko masih buka apakah yang bisa saya bantu"],
             "context":[""]
         },
@@ -42,7 +47,7 @@
                 "apakah barangnya baru?",
                 "apakah barangnya bekas?",
                 "apakah barang baru?",
-                "apakah barang bekass?",
+                "apakah barang bekas?",
                 "apakah barang lama",
                 "apakah barangnya sudah lama"],
             "responses":["baru semua"],
@@ -61,7 +66,20 @@
             "context":[""]
         },{
             "tag":"tidak menjawab",
-            "patterns":[],
+            "patterns":["kapan barang akan dikirim",
+                "kapan barang ready lagi",
+                "bagaimana cara menjalankan perangkat",
+                "ini pake aplikasi []?",
+                "itu komponennya apa saja pak?", 
+                "ada fotonya?",
+                "apakah ada gambarnya?",
+                "bagaimana cara implementasinya",
+                "ini pakai aplikasi apa?",
+                "apakah ada instruksi nya?",
+                "apa fungsi barang ini?",
+                "apakah fungsinya?",
+                "apakah kegunaanya?"
+                ],
             "responses":[""],
             "context":[""]
         }

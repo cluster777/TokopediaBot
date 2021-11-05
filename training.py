@@ -10,6 +10,7 @@ import numpy as np
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
 import random
+random.seed(123456789)
 words=[]
 classes = []
 documents = []
@@ -79,9 +80,9 @@ print("Training data created")
 # equal to number of intents to predict output intent with softmax
 model = Sequential()
 model.add(Dense(128, input_shape=(len(train_x[0]),), activation='relu'))
-model.add(Dropout(0.8))
+model.add(Dropout(0.6))
 model.add(Dense(64, activation='relu'))
-model.add(Dropout(0.8))
+model.add(Dropout(0.6))
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
 # Compile model. Stochastic gradient descent with Nesterov accelerated gradient gives good results for this model
