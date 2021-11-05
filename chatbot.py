@@ -6,8 +6,9 @@ from keras.models import load_model
 model = load_model('chatbot_model.h5')
 import json
 import random
+import numpy as np
 
-intents = json.loads(open('intents.json').read())
+intents = json.loads(open('dataset.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 
@@ -36,7 +37,7 @@ def predict_class(sentence, model):
     # filter out predictions below a threshold
     p = bow(sentence, words,show_details=False)
     res = model.predict(np.array([p]))[0]
-    ERROR_THRESHOLD = 0.25
+    ERROR_THRESHOLD = 0.05
     results = [[i,r] for i,r in enumerate(res) if r>ERROR_THRESHOLD]
     # sort by strength of probability
     results.sort(key=lambda x: x[1], reverse=True)

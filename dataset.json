@@ -24,20 +24,28 @@
                 "bisa kurang nggak min?",
                 "bisa kurang nggak kak?",
                 "bisa kurang nggak?"],
-            "responses":[""],
+            "responses":["gak bisa harga pas"],
             "context":[""]
         },{
             "tag":"tanya pengiriman",
             "patterns":["utk pemgiriman via [] bgmn cara ordernya gan?",
                 "utk pemgiriman via [] bgmn gan?",
-                "utk pemgiriman via [] bgmn kak?"],
-            "responses":[""],
+                "utk pemgiriman via [] bgmn kak?",
+                "kalau lewat [] bagaimana?",
+                "kalau lewat [] gimana?"],
+            "responses":["gampang lewat gojek aja"],
             "context":[""]
         },{
             "tag":"baru atau 2nd",
             "patterns":["ini baru atau bekas ya gan?",
-                "ini baru atau bekas ya?"],
-            "responses":[""],
+                "ini baru atau bekas ya?",
+                "apakah barangnya baru?",
+                "apakah barangnya bekas?",
+                "apakah barang baru?",
+                "apakah barang bekass?",
+                "apakah barang lama",
+                "apakah barangnya sudah lama"],
+            "responses":["baru semua"],
             "context":[""]
         },{
             "tag":"barang ready",
@@ -49,7 +57,7 @@
                 "yg [] abis min?",
                 "ada [] gan ?",
                 "Kak mw tanya barang [] nya ada?"],
-            "responses":[""],
+            "responses":["barang selalu ready"],
             "context":[""]
         },{
             "tag":"tidak menjawab",
