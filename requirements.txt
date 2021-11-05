@@ -1,0 +1,11 @@
+beautifulsoup4==4.10.0
+keras==2.7.0
+keras_nightly==2.5.0.dev2021032900
+mysql_connector_repackaged==0.3.1
+nltk==3.6.2
+numpy==1.19.5
+pyTelegramBotAPI==4.1.1
+requests==2.25.1
+selenium==3.141.0
+telegram==0.0.1
+webdriver_manager==3.5.1

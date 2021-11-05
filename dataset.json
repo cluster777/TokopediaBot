@@ -1,0 +1,87 @@
+{
+    "intents":[
+        {
+            "tag":"toko buka",
+            "patterns":["apakah toko buka?",
+                "apakah masih buka?",
+                "apa toko buka?",
+                "apakah masih ada?",
+                "apakah toko tutup?",
+                "apakah sudah tutup?",
+                "kapan buka?"],
+            "responses":["toko masih buka apakah yang bisa saya bantu"],
+            "context":[""]
+        },
+        {
+            "tag":"terimakasih",
+            "patterns":["Terima kasih",
+                "siap Terima kasih",
+                "Terimakasih",
+                "Terima kasih gan",
+                "Terima kasih min",
+                "Terimakasih gan",
+                "Terimakasih min"],
+            "responses":["sama sama","tidak masalah"],
+            "context":[""]
+        },{
+            "tag":"menawar",
+            "patterns":["bs kurang nggak gan?",
+                "bisa kurang nggak min?",
+                "bisa kurang nggak kak?",
+                "bisa kurang nggak?"],
+            "responses":["gak bisa harga pas"],
+            "context":[""]
+        },{
+            "tag":"tanya pengiriman",
+            "patterns":["utk pemgiriman via [] bgmn cara ordernya gan?",
+                "utk pemgiriman via [] bgmn gan?",
+                "utk pemgiriman via [] bgmn kak?",
+                "kalau lewat [] bagaimana?",
+                "kalau lewat [] gimana?"],
+            "responses":["gampang lewat gojek aja"],
+            "context":[""]
+        },{
+            "tag":"baru atau 2nd",
+            "patterns":["ini baru atau bekas ya gan?",
+                "ini baru atau bekas ya?",
+                "apakah barangnya baru?",
+                "apakah barangnya bekas?",
+                "apakah barang baru?",
+                "apakah barang bekas?",
+                "apakah barang lama",
+                "apakah barangnya sudah lama"],
+            "responses":["baru semua"],
+            "context":[""]
+        },{
+            "tag":"barang ready",
+            "patterns":["apakah barang siap?",
+                "Barangnya ready gan?",
+                "Barangnya ready?",
+                "barang ready stok?",
+                "barang ready stok min?",
+                "yg [] abis min?",
+                "ada [] gan ?",
+                "Kak mw tanya barang [] nya ada?"],
+            "responses":["barang selalu ready"],
+            "context":[""]
+        },{
+            "tag":"tidak menjawab",
+            "patterns":["kapan barang akan dikirim",
+                "kapan barang ready lagi",
+                "bagaimana cara menjalankan perangkat",
+                "ini pake aplikasi []?",
+                "itu komponennya apa saja pak?", 
+                "ada fotonya?",
+                "apakah ada gambarnya?",
+                "bagaimana cara implementasinya",
+                "ini pakai aplikasi apa?",
+                "apakah ada instruksi nya?",
+                "apa fungsi barang ini?",
+                "apakah fungsinya?",
+                "apakah kegunaanya?"
+                ],
+            "responses":[""],
+            "context":[""]
+        }
+    ]
+}
