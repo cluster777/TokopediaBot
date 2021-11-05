@@ -9,9 +9,9 @@ install Python
 
 install pip
 
-install telebot, beautiful soup, selenium
+install requirements for python
 ``` 
-pip install pyTelegramBotAPI bs4 selenium webdriver-manager
+pip install requirements.txt
 ```
 ### chromedriver ###
 chromedriver no longer required to run the program updated to auto download the requirement and store it in cache
@@ -90,8 +90,19 @@ note may dump unicode
 this program used for dataset in this project 
 
 ### chatbot.py ###
-(WIP)
-for now it return empty reply mesage whatever it input is......
+TLDR it will return the reply when given message array into sendReply
+
+### training.py ###
+the one which train the model
+create model and store it in the folder of the project there is classes.pkl, chatbot_model.h5 and words.pkl
+
+**note**: the model already pushed so no need to run this
+
+### testingChatbot.py ###
+terminal applicatioin to test how the chatbot reply message
+input the message in the prompt it will reply back the one chatbot will reply
+it call the same module of chatbot.py the one which called in other program
+
 
 have fun 
 -- made by cluster777 --
