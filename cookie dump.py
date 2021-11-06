@@ -28,7 +28,7 @@ class UI(QDialog):
     def acc(self):
         print("get Cookie")
         print(driver.get_cookies())
-        with open('cookieTestmm.txt','w', newline='')as tmp:
+        with open('./Cookie/cookieTestmm.txt','w', newline='')as tmp:
             json.dump(driver.get_cookies(), tmp, indent = 6)
 
         driver.close()

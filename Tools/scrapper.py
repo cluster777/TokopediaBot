@@ -63,7 +63,7 @@ def get_orderCount(target):
 
 def sendChat(message):
     setting={}
-    with open('./setting.json')as f:
+    with open('../Telegram/setting.json')as f:
         setting=json.load(f)
     API_TOKEN = setting['Token']
     bot = telebot.TeleBot(API_TOKEN)
@@ -74,7 +74,7 @@ def sendChat(message):
 
 def sendOrderNotification(message):
     setting={}
-    with open('./setting.json')as f:
+    with open('../Telegram/setting.json')as f:
         setting=json.load(f)
     API_TOKEN = setting['Token']
     bot = telebot.TeleBot(API_TOKEN)

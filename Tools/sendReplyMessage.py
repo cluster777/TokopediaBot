@@ -8,8 +8,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
 import json
 import time
-import scrapper
-import chatbot
 
 def sendReplyMessage(name,message):
     chrome_options = Options()
@@ -18,7 +16,7 @@ def sendReplyMessage(name,message):
     chrome_options.add_argument('user-agent={0}'.format(user_agent))
     chrome_options.add_argument('window-size=1920x1080');
     driver = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options)
-    with open('cookieTestmm.txt','r', newline='')as tmp:
+    with open('../Cookie/cookieTestmm.txt','r', newline='')as tmp:
         cookies = json.load(tmp)
     while True:
         try:

@@ -6,10 +6,10 @@ from telebot import types
 import re
 import json
 import os
-import sendReplyMessage
+import Tools.sendReplyMessage as sendReplyMessage
 setting={}
 try:
-    with open('./setting.json')as f:
+    with open('./Telegram/setting.json')as f:
         setting=json.load(f)
 except:
     print("file not setting.json not available in this folder please make one dont forget the token")
@@ -39,7 +39,7 @@ def Send_Welcome(message):
 def create_setting(message):
     if setting["ChatId"]=="":
         setting["ChatId"]=message.chat.id
-        with open("./setting.json","w") as f:
+        with open("./Telegram/setting.json","w") as f:
             json.dump(setting, f, indent = 6)
         bot.send_message(message.chat.id,"setting done")
     else:
