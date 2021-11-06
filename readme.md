@@ -13,21 +13,23 @@ install requirements for python
 ``` 
 pip install requirements.txt
 ```
-### chromedriver ###
-chromedriver no longer required to run the program updated to auto download the requirement and store it in cache
 
 next run "cookie dump.py" and then do login to tokopedia website
-> note the cookie only copied into local folder
+> note the cookie only copied into /Cookie folder
 
-edit setting_EXAMPLE.json and save it as setting.json
+edit setting_EXAMPLE.json inside /Telegram folder and save it as setting.json
 next run TelegramBot.py
 > note change the token from the botFather check https://core.telegram.org/bots for detail
 > use setting_EXAMPLE.json as baseline
+> you can get token from this by chatting with botFather in this link https://t.me/botfather
 
-fill chatId with your userID it will direct message there
-> chatId use your userId (after running telegram bot it will print on terminal after you click start on the bot chat)
+now run TelegramBot.py
 
-now run cookieImport.py and order.py it will automatically send information to your telegram 
+after telegramBot running use the link made in botFather and then open it using your telegram then do /config
+> this will make the bot send the message there 
+> this action can only be done once or when the Telegram/setting.json :chatID set to empty manualy
+
+now run ChatCollector.py and orderCount.py it will automatically send information to your telegram 
 ## file explanation ##
 here i will explain how each file works
 ### cookie dump.py ###
