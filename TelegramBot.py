@@ -1,6 +1,3 @@
-from requests import get
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 import telebot
 from telebot import types
 import re
@@ -56,21 +53,10 @@ def check_Status(message):
             m+="setting OK\n"
     else:
         m+="setting not OK use command /config to fix\n"
-    if os.path.isfile('./cookieTestmm.txt'):
+    if os.path.isfile('./Cookie/cookieTestmm.txt'):
         m+="cookie ready to use OK\n"
     else:
         m+="cookie not ready use \"cookie dump.py\" to make one"
-    try:
-        chrome_options = Options()
-        chrome_options.add_argument("--headless")
-        user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.50 Safari/537.36'    
-        chrome_options.add_argument('user-agent={0}'.format(user_agent))
-        chrome_options.add_argument('window-size=1920x1080');
-        driver = webdriver.Chrome(options=chrome_options)
-        driver.close()
-        m+="Web driver OK\n"
-    except:
-        m+="Web driver not ready\n first download the webdriver from https://chromedriver.chromium.org/downloads \n then insert it into path named chromedriver"
     bot.send_message(message.chat.id,m)
 
 @bot.callback_query_handler(func=lambda query: query.data=="reply")
