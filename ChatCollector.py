@@ -25,14 +25,14 @@ for curcookie in cookies:
     driver.add_cookie(curcookie)
 driver.refresh()
 #go to messaging
-time.sleep(5)
+time.sleep(10)
 try:
     driver.find_element_by_xpath("//button[@aria-label='Tutup tampilan modal']").click()
 except:
     print("nothing wrong")
 
 driver.get("https://seller.tokopedia.com/chat") 
-time.sleep(5)
+time.sleep(10)
 while True:
     # remove pin verification notification
     try:
@@ -45,8 +45,10 @@ while True:
         found=scrapper.get_Chatcount(driver.page_source)
         if (found==[]):
             print("no chat found")
+            driver.get("https://seller.tokopedia.com/chat") 
             time.sleep(60)
-            driver.refresh()
+
+            time.sleep(10)
             continue;
         #for each chat with indicator do
         
@@ -81,15 +83,17 @@ while True:
                     time.sleep(1)
         # ok done wait for next round
         print("round done wait for next")
+        driver.get("https://seller.tokopedia.com/chat") 
         time.sleep(30)
-        driver.refresh()
-        time.sleep(5)
+
+        time.sleep(10)
     except Exception as e:
         print("uh error????")
         print(e)
         print("---------^^^^")
+        driver.get("https://seller.tokopedia.com/chat") 
         time.sleep(30)
-        driver.refresh()
+        driver.get("https://seller.tokopedia.com/chat") 
         time.sleep(5)
 
 #while check 

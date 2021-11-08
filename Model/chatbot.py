@@ -3,14 +3,14 @@ import pickle
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 from keras.models import load_model
-model = load_model('chatbot_model.h5')
+model = load_model('./Model/chatbot_model.h5')
 import json
 import random
 import numpy as np
 
-intents = json.loads(open('dataset.json').read())
-words = pickle.load(open('words.pkl','rb'))
-classes = pickle.load(open('classes.pkl','rb'))
+intents = json.loads(open('./Model/dataset.json').read())
+words = pickle.load(open('./Model/words.pkl','rb'))
+classes = pickle.load(open('./Model/classes.pkl','rb'))
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)

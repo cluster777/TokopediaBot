@@ -16,7 +16,7 @@ def sendReplyMessage(name,message):
     chrome_options.add_argument('user-agent={0}'.format(user_agent))
     chrome_options.add_argument('window-size=1920x1080');
     driver = webdriver.Chrome(ChromeDriverManager().install(),options=chrome_options)
-    with open('../Cookie/cookieTestmm.txt','r', newline='')as tmp:
+    with open('./Cookie/cookieTestmm.txt','r', newline='')as tmp:
         cookies = json.load(tmp)
     while True:
         try:
@@ -41,8 +41,8 @@ def sendReplyMessage(name,message):
             print(e)
             print("---------^^^^")
             time.sleep(1)
-            driver.refresh()
-            time.sleep(5)
+            driver.get("https://seller.tokopedia.com/chat") 
+            time.sleep(10)
     while True:
             
         try:
