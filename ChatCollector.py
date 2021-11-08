@@ -33,7 +33,6 @@ except:
 
 driver.get("https://seller.tokopedia.com/chat") 
 time.sleep(5)
-driver.save_screenshot("screenshot.png")
 while True:
     # remove pin verification notification
     try:

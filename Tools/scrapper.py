@@ -41,7 +41,8 @@ def message_preProcess(message):
                 res.append(image['src'])
         except:
             print(mess)
-            print("not message")
+            res.append(mess)
+            print("unable to process this mess")
     return res
 
 def get_Chatcount(target):
