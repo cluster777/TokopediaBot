@@ -29,6 +29,17 @@ after telegramBot running use the link made in botFather and then open it using 
 > this will make the bot send the message there 
 > this action can only be done once or when the Telegram/setting.json :chatID set to empty manualy
 
+before running the main program you might like to edit Model/dataset.json file:
+>* here contain the reply for each case writen on tag
+>* edit the response with the most correct reply for that response
+>* example "responses":["a new response"]
+>* if you like more than 1 respone do it like "responses":["first response","second response"]
+>* you cant sent image or sticker only links or text
+>* you can make new line with triple tick for example 
+```
+```response with newline
+new lined response```
+```
 now run ChatCollector.py and orderCount.py it will automatically send information to your telegram 
 ## file explanation ##
 here i will explain how each file works
