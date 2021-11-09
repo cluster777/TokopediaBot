@@ -45,8 +45,7 @@ now run ChatCollector.py and orderCount.py it will automatically send informatio
 here i will explain how each file works
 ### cookie dump.py ###
 in this program it will open new chrome window with tokopedia website in it
-we have to do login in this page, after succesfull login **Don't** close it manually but **input** "finish" into the terminal
-next the program will take the cookie session on this login session and save it on file named cookieTestmm.json
+we have to do login in this page, after succesfull login **Don't** close it manually but click on OK on the newly opened window(dialog) if you want to cancel click on the cancel button on dialog it wont save the cookie if cancel pressed
 > do note dont share the cookie with **anyone** with it your login credential can be used 
 this program only use selenium to take open the browser session and take the cookie and save it into json using python json module
 
@@ -59,7 +58,7 @@ the big loop
 * launch scrapper.py get_Chatcount it will return list of object filled with chatname and chatcount for each
 * if there is no chat count it will jump into waiting mode (sleep for 30s then back to loop)
 * for each object from get_Chatcount it will open the chat which the chat on and run scrapper.py get_nChat which will return list of last n message object from the chat. 
-* for each chat message. the chat message passed into chatbot.py(WIP) which will create a reply for each message if the reply is empty it means it will be passed into telegram chat
+* for each chat message. the chat message passed into chatbot.py which will create a reply for each message if the reply is empty it means it will be passed into telegram chat
 * the final step to send the message if the message reply is empty it will call scrapper.py sendChat this will send message using the setting.json token and chatId 
 * or it will send into the chat itself by click on chatbox, input the reply, then click the send button
 please note several things
