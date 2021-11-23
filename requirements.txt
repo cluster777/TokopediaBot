@@ -10,3 +10,4 @@ requests==2.25.1
 selenium==3.141.0
 telegram==0.0.1
 webdriver_manager==3.5.1
+tensorflow==2.5.0

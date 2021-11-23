@@ -20,7 +20,7 @@ driver.get("https://www.tokopedia.com/")
 class UI(QDialog):
     def __init__(self):
         super(UI, self).__init__()
-        uic.loadUi("cookieDump.ui", self)
+        uic.loadUi("./UI/cookieDump.ui", self)
         self.button = self.findChild(QDialogButtonBox, "finishButton")
         self.accepted.connect(self.acc)
         self.rejected.connect(self.rej)

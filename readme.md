@@ -8,22 +8,40 @@ This program have access to telegram to send notification if there is a chat fro
 install Python 
 
 install pip
+download the aplication from here by zip or by cloning
+
+
 
 install requirements for python
 ``` 
-pip install requirements.txt
+pip install -r requirements.txt
 ```
+open command prompt into the folder of the aplication
 
 next run "cookie dump.py" and then do login to tokopedia website
+> if error no directory or file use this on command prompt(python may work in his directory not in this working directory)
+``` 
+python "cookie dump.py"
+```
 > note the cookie only copied into /Cookie folder
 
-edit setting_EXAMPLE.json inside /Telegram folder and save it as setting.json
+open new command prompt in the folder using:
+```
+start
+```
+> this will run new cmd in this directory
+
+Get your chatbot Token from https://t.me/botfather
+then copy the token into setting_EXAMPLE.json inside /Telegram folder and save it as setting.json
+
 next run TelegramBot.py
+> if error no directory or file use this on new command prompt it will stay open and just let it be
+``` 
+python TelegramBot.py
+```
 > note change the token from the botFather check https://core.telegram.org/bots for detail
 > use setting_EXAMPLE.json as baseline
 > you can get token from this by chatting with botFather in this link https://t.me/botfather
-
-now run TelegramBot.py
 
 after telegramBot running use the link made in botFather and then open it using your telegram then do /config
 > this will make the bot send the message there 
@@ -40,7 +58,14 @@ before running the main program you might like to edit Model/dataset.json file:
 ```response with newline
 new lined response```
 ```
-now run ChatCollector.py and orderCount.py it will automatically send information to your telegram 
+now run ChatCollector.py and orderCount.py it will automatically send information to your telegram
+> if error no directory or file use this on new command prompt it will stay open and just let it be
+``` 
+python ChatCollector.py
+```
+```
+python orderCount.py
+```
 ## file explanation ##
 here i will explain how each file works
 ### cookie dump.py ###
