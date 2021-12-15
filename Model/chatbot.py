@@ -4,7 +4,7 @@ nltk.download('wordnet')
 import pickle
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 model = load_model('./Model/chatbot_model.h5')
 import json
 import random
