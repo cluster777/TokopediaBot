@@ -46,9 +46,9 @@ while True:
         if (found==[]):
             print("no chat found")
             driver.get("https://seller.tokopedia.com/chat") 
-            time.sleep(60)
-
             time.sleep(10)
+
+            time.sleep(5)
             continue;
         #for each chat with indicator do
         
@@ -84,9 +84,9 @@ while True:
         # ok done wait for next round
         print("round done wait for next")
         driver.get("https://seller.tokopedia.com/chat") 
-        time.sleep(30)
+        time.sleep(5)
 
-        time.sleep(10)
+        time.sleep(5)
     except Exception as e:
         print("uh error????")
         print(e)
