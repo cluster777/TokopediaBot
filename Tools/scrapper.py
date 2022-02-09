@@ -34,13 +34,13 @@ def message_preProcess(message):
         
         mess=mess.findChildren('div')
         try:
-            if(mess[0]['class'][0]=='messageWrapper'):
+            if(mess[0]['class'][0]=='css-19vs198'):
                 res.append(mess[0].findChildren('div')[0].getText())
             else:
                 image=mess[0].find('img')
                 res.append(image['src'])
         except:
-            print(mess)
+            print(mess[0]['class'][0])
             res.append(mess)
             print("unable to process this mess")
     return res
